@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Flask Simple Example</h1>
+<h2>{{ hero.elements.title.value }}</h2>
+<div>
+{% for article in articles %}
+    <div>
+        <div>
+            <h2>
+                <a href="/articles/{{article.elements.url_pattern.value}}">
+                    {{ article.elements.title.value }}
+                </a>
+            </h2>
+            <p>
+                {{ article.elements.summary.value }}
+            </p>
+            <div>
+                {{ article.elements.post_date.value }}
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}
